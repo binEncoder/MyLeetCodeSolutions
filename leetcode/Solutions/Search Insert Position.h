@@ -5,7 +5,7 @@
 class Solution_SearchInsertPosition {
 public:
 
-	// Ê±¼ä¸´ÔÓ¶È O(N)
+	// æ—¶é—´å¤æ‚åº¦ O(N)
 	int searchInsert(vector<int>& nums, int target) {
 		int ret = 0;
 		for (auto item : nums) {
@@ -15,7 +15,7 @@ public:
 		return ret;
 	}
 
-	// ¶ş·Ö²éÕÒ£¬Ê±¼ä¸´ÔÓ¶È O(logN)
+	// äºŒåˆ†æŸ¥æ‰¾ï¼Œæ—¶é—´å¤æ‚åº¦ O(logN)
 	int searchInsertOA(vector<int>& nums, int target) {
 		return distance(nums.begin(), lower_bound(nums.begin(), nums.end(), target));
 	}

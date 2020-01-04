@@ -18,12 +18,12 @@ public:
 		return false;
 	}
 
-	// ²é¿´vectorµÄÔªËØÊıÁ¿Óë½«vectorËùÓĞÔªËØ·ÅÈëset(ÔªËØ²»ÖØ¸´)ÖĞºóµÄÊıÁ¿µÄ´óĞ¡
+	// æŸ¥çœ‹vectorçš„å…ƒç´ æ•°é‡ä¸å°†vectoræ‰€æœ‰å…ƒç´ æ”¾å…¥set(å…ƒç´ ä¸é‡å¤)ä¸­åçš„æ•°é‡çš„å¤§å°
 	bool containsDuplicateOA(vector<int>& nums) {
 		return nums.size() > set<int>(nums.begin(), nums.end()).size();
 	}
 
-	// ÅÅĞò£¬²éÑ¯ÏàÁÚÔªËØÊÇ·ñÏàÍ¬
+	// æ’åºï¼ŒæŸ¥è¯¢ç›¸é‚»å…ƒç´ æ˜¯å¦ç›¸åŒ
 	bool containsDuplicateOA2(vector<int>& nums) {
 		sort(nums.begin(), nums.end());
 		for (int i = 0; i<int(nums.size()) - 1; i++) {

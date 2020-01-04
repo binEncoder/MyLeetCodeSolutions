@@ -14,7 +14,7 @@ public:
 		return ret;
 	}
 
-	// 100% ¡¶Êı¾İ½á¹¹ÓëËã·¨·ÖÎö¡· P21
+	// 100% ã€Šæ•°æ®ç»“æ„ä¸ç®—æ³•åˆ†æã€‹ P21
 	int maxSubArray(vector<int>& nums) {
 		int ans = INT_MIN, cur = 0;
 		size_t i = 0, length = nums.size();
@@ -29,7 +29,7 @@ public:
 	}
 };
 
-// Å£¿ÍÍø£º×î´ó×Ó¾ØÕó
+// ç‰›å®¢ç½‘ï¼šæœ€å¤§å­çŸ©é˜µ
 #if 0
 #include <stdio.h>
 #include <stdlib.h>

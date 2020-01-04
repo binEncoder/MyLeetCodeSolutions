@@ -26,7 +26,7 @@ public:
 			if (p->val == p->next->val) {
 				freeP = p->next;
 				p->next = p->next->next;
-				free(freeP);				/* vs 2017下可以编译通过，但是运行失败？提交通过 */
+				free(freeP);				/* vs 2017涓嬪彲浠ョ紪璇戦�氳繃锛屼絾鏄繍琛屽け璐ワ紵鎻愪氦閫氳繃 */
 			}
 			else {
 				p = p->next;

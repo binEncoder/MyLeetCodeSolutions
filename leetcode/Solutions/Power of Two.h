@@ -4,7 +4,7 @@
 
 class Solution_PowerOfTwo {
 public:
-	/* ¹ýÂËµô²»·ûºÏµÄ¸ºÊý */
+	/* è¿‡æ»¤æŽ‰ä¸ç¬¦åˆçš„è´Ÿæ•° */
 	/* best beat 97.69% */
 	bool isPowerOfTwo(int n) {
 		return (n >= 1) ? (numOfBinOne(n) == 1) : false;

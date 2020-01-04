@@ -1,13 +1,12 @@
-
 #include "common.h"
 
-/* ±©Á¦Ëã·¨ */
+/* æš´åŠ›ç®—æ³• */
 #define				NORMAL_FUNC					CONFIG_DISABLE				
 
-/* KMPËã·¨£¬µ± ×Ó´®ÏàËÆ¶È½Ï¸ßÊ± ½Ï"±©Á¦Ëã·¨"ÓĞÃ÷ÏÔĞÔÄÜÌáÉı */
+/* KMPç®—æ³•ï¼Œå½“ å­ä¸²ç›¸ä¼¼åº¦è¾ƒé«˜æ—¶ è¾ƒ"æš´åŠ›ç®—æ³•"æœ‰æ˜æ˜¾æ€§èƒ½æå‡ */
 #define				KMP_FUNC					CONFIG_ENABLE				
 
-/* ¸Ä½øµÄKMPËã·¨£¬Ä¿Ç°·¢ÏÖµÄ×î¼ÑÄ£Ê½Æ¥ÅäËã·¨ */
+/* æ”¹è¿›çš„KMPç®—æ³•ï¼Œç›®å‰å‘ç°çš„æœ€ä½³æ¨¡å¼åŒ¹é…ç®—æ³• */
 #define				BETTER_KMP_FUNC				CONFIG_DISABLE
 
 #if( NORMAL_FUNC + KMP_FUNC + BETTER_KMP_FUNC > CONFIG_ENABLE)
@@ -15,7 +14,7 @@
 #endif
 
 #if( NORMAL_FUNC == CONFIG_ENABLE )
-/* ÆÓËØÄ£Ê½Æ¥Åä */
+/* æœ´ç´ æ¨¡å¼åŒ¹é… */
 int strStr(const char *src, const char *pattern) {
 	if (!pattern || !strlen(pattern)) {
 		return 0;
@@ -24,27 +23,27 @@ int strStr(const char *src, const char *pattern) {
 	const int patternLen = strlen(pattern);
 	int i = 0, j = 0;
 	while ((i < srcLen) && (j < patternLen)) {
-		if (*(src + i) == *(pattern + j)) {			/* ÏàµÈÔò¼ÌĞø±È½Ï */
+		if (*(src + i) == *(pattern + j)) {			/* ç›¸ç­‰åˆ™ç»§ç»­æ¯”è¾ƒ */
 			i++;	j++;
 		}
 		else {
 			printf(" i = %d\t j = %d\n", i, j);
-			i = i - j + 1;		/* ²»µÈºóÖ÷´®´ÓÉÏÒ»´Î¿ªÊ¼Î»ÖÃ+1µÄÎ»ÖÃ½øĞĞ±È½Ï */
-								/* i = i - j Ïàµ±ÓÚ»Øµ½±¾´Î±È½ÏµÄÆğÊ¼Î»ÖÃ£¬ 
-								 * i = i - j + 1 ×ÔÈ»ÊÇÍùÓÒÒÆ¶¯1¸öÔªËØ 
+			i = i - j + 1;		/* ä¸ç­‰åä¸»ä¸²ä»ä¸Šä¸€æ¬¡å¼€å§‹ä½ç½®+1çš„ä½ç½®è¿›è¡Œæ¯”è¾ƒ */
+								/* i = i - j ç›¸å½“äºå›åˆ°æœ¬æ¬¡æ¯”è¾ƒçš„èµ·å§‹ä½ç½®ï¼Œ 
+								 * i = i - j + 1 è‡ªç„¶æ˜¯å¾€å³ç§»åŠ¨1ä¸ªå…ƒç´  
 								 */
-			j = 0;				/* ²»µÈºó¡°Ä£Ê½´®¡±´ÓÍ·¿ªÊ¼±È½Ï */
+			j = 0;				/* ä¸ç­‰åâ€œæ¨¡å¼ä¸²â€ä»å¤´å¼€å§‹æ¯”è¾ƒ */
 		}
 	}
 
-	/* ´ËÌõ¼şÂú×ã£¬±íÃ÷ÒÑ±È½ÏÍêËùÓĞpatternµÄÔªËØ£¬¾ùÓësrc´®ÏàµÈ */
+	/* æ­¤æ¡ä»¶æ»¡è¶³ï¼Œè¡¨æ˜å·²æ¯”è¾ƒå®Œæ‰€æœ‰patternçš„å…ƒç´ ï¼Œå‡ä¸srcä¸²ç›¸ç­‰ */
 	return (j == patternLen) ? (i - j) : (-1);
 }
 #endif
 
 #if ( KMP_FUNC == CONFIG_ENABLE )
 /*
- * next[j]µÄÖµ( k )±íÊ¾£ºµ± ×Ó´®[j] != Ö÷´®[i]Ê±£¬jÖ¸ÕëÏÂÒ»´ÎµÄÒÆ¶¯Î»ÖÃ
+ * next[j]çš„å€¼( k )è¡¨ç¤ºï¼šå½“ å­ä¸²[j] != ä¸»ä¸²[i]æ—¶ï¼ŒjæŒ‡é’ˆä¸‹ä¸€æ¬¡çš„ç§»åŠ¨ä½ç½®
  */
 int* getNextArray(const char *pattern) {
 	int len = strlen(pattern);
@@ -59,8 +58,8 @@ int* getNextArray(const char *pattern) {
 		}
 		else {
 			printf("\tk = %d\t",k);
-			k = next[k];		/* ÈôÁ½ÔªËØ²»µÈ£¬Ôòk»ØËİ£¬
-								 * Ö±µ½ p[j] == p[k] »ò kÎª-1 
+			k = next[k];		/* è‹¥ä¸¤å…ƒç´ ä¸ç­‰ï¼Œåˆ™kå›æº¯ï¼Œ
+								 * ç›´åˆ° p[j] == p[k] æˆ– kä¸º-1 
 								 */
 		}
 		printf("\n");
@@ -75,7 +74,7 @@ int* getNextArray(const char *pattern) {
 
 #if ( BETTER_KMP_FUNC == CONFIG_ENABLE )
 /*
-* next[j]µÄÖµ( k )±íÊ¾£ºµ± ×Ó´®[j] != Ö÷´®[i]Ê±£¬jÖ¸ÕëÏÂÒ»´ÎµÄÒÆ¶¯Î»ÖÃ
+* next[j]çš„å€¼( k )è¡¨ç¤ºï¼šå½“ å­ä¸²[j] != ä¸»ä¸²[i]æ—¶ï¼ŒjæŒ‡é’ˆä¸‹ä¸€æ¬¡çš„ç§»åŠ¨ä½ç½®
 */
 int* getNextArray(const char *pattern) {
 	int len = strlen(pattern);
@@ -97,8 +96,8 @@ int* getNextArray(const char *pattern) {
 		}
 		else {
 			printf("\tk = %d\t", k);
-			k = next[k];		/* ÈôÁ½ÔªËØ²»µÈ£¬Ôòk»ØËİ£¬
-								* Ö±µ½ p[j] == p[k] »ò kÎª-1
+			k = next[k];		/* è‹¥ä¸¤å…ƒç´ ä¸ç­‰ï¼Œåˆ™kå›æº¯ï¼Œ
+								* ç›´åˆ° p[j] == p[k] æˆ– kä¸º-1
 								*/
 		}
 		printf("\n");
@@ -124,9 +123,9 @@ int strStr(const char *src, const char *pattern) {
 
 	while ((i < srcLen) && (j < patternLen)) {
 		if ((*(src + i) == *(pattern + j))
-			|| (j == -1)) {		/* j == -1 ±íÊ¾Ä£Ê½´®ÓëÖ÷´®ÔÚµ±Ç°Î»ÖÃ¾Í²»Æ¥Åä£¬
-								* Õâ¸öËã·¨Ó¦¸ÃÖ»ÓĞnext[0]¿ÉÄÜÎª-1£¬
-								* ±í´ïµÄÒâË¼ÊÇ£ºi´ÓÏÂÒ»¸öÎ»ÖÃ¿ªÊ¼£¬j´Ó0¿ªÊ¼
+			|| (j == -1)) {		/* j == -1 è¡¨ç¤ºæ¨¡å¼ä¸²ä¸ä¸»ä¸²åœ¨å½“å‰ä½ç½®å°±ä¸åŒ¹é…ï¼Œ
+								* è¿™ä¸ªç®—æ³•åº”è¯¥åªæœ‰next[0]å¯èƒ½ä¸º-1ï¼Œ
+								* è¡¨è¾¾çš„æ„æ€æ˜¯ï¼šiä»ä¸‹ä¸€ä¸ªä½ç½®å¼€å§‹ï¼Œjä»0å¼€å§‹
 								*/
 			i++;	j++;
 		}
@@ -137,7 +136,7 @@ int strStr(const char *src, const char *pattern) {
 	}
 	free(next);
 	printf("\n");
-	/* ´ËÌõ¼şÂú×ã£¬±íÃ÷ÒÑ±È½ÏÍêËùÓĞpatternµÄÔªËØ£¬¾ùÓësrc´®ÏàµÈ */
+	/* æ­¤æ¡ä»¶æ»¡è¶³ï¼Œè¡¨æ˜å·²æ¯”è¾ƒå®Œæ‰€æœ‰patternçš„å…ƒç´ ï¼Œå‡ä¸srcä¸²ç›¸ç­‰ */
 	return (j == patternLen) ? (i - j) : (-1);
 }
 #endif

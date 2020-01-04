@@ -10,7 +10,7 @@ public:
 			int pop = x % 10;
 			x /= 10;
 
-			// ´¦ÀíÒç³öÊı¾İÇé¿ö
+			// å¤„ç†æº¢å‡ºæ•°æ®æƒ…å†µ
 			if (rev > INT_MAX / 10 || (rev == INT_MAX / 10 && pop > 7)) return 0;
 			if (rev < INT_MIN / 10 || (rev == INT_MIN / 10 && pop < -8)) return 0;
 
@@ -20,7 +20,7 @@ public:
 	}
 	bool isPalindrome(int x) {
 		bool ret = false;
-		// ÀûÓÃÖ®Ç°µÄ»ØÎÄÊı×ÖµÃ³ö½áÂÛ
+		// åˆ©ç”¨ä¹‹å‰çš„å›æ–‡æ•°å­—å¾—å‡ºç»“è®º
 		if ((x >= 0) && (x == reverseOA(x))) {
 			ret = true;
 		}

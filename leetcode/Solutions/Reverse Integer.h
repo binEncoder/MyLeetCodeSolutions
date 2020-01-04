@@ -29,7 +29,7 @@ public:
 			int pop = x % 10;
 			x /= 10;
 
-			// 处理溢出数据情况
+			// 澶勭悊婧㈠嚭鏁版嵁鎯呭喌
 			if (rev > INT_MAX / 10 || (rev == INT_MAX / 10 && pop > 7)) return 0;
 			if (rev < INT_MIN / 10 || (rev == INT_MIN / 10 && pop < -8)) return 0;
 			

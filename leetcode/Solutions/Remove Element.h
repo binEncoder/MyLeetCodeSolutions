@@ -25,7 +25,7 @@ public:
 	}
 
 	int removeElementOA2(vector<int>& nums, int val) {
-		// remove函数删除 [arg1, arg2)区间内与arg3数值相等的元素，并返回新的“超尾”迭代器
+		// remove鍑芥暟鍒犻櫎 [arg1, arg2)鍖洪棿鍐呬笌arg3鏁板�肩浉绛夌殑鍏冪礌锛屽苟杩斿洖鏂扮殑鈥滆秴灏锯�濊凯浠ｅ櫒
 		return distance(nums.begin(), remove(nums.begin(), nums.end(), val));
 	}
 };

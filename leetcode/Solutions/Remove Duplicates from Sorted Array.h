@@ -7,7 +7,7 @@ public:
 	int removeDuplicates(vector<int>& nums) {
 		int ret = 0;
 		for (size_t i = 0; i < nums.size(); i++) {
-			// ÀûÓÃ || Âß¼­ÔËËãµÄ¶ÌÂ·ÌØĞÔ£¬±ÜÃâµ±retÎª0Ê±ÅĞ¶ÏºóÒ»Ìõ¼ş
+			// åˆ©ç”¨ || é€»è¾‘è¿ç®—çš„çŸ­è·¯ç‰¹æ€§ï¼Œé¿å…å½“retä¸º0æ—¶åˆ¤æ–­åä¸€æ¡ä»¶
 			if ((ret == 0) || (nums[ret - 1 ] != nums[i]) ) {
 				nums[ret++] = nums[i];
 			}
@@ -26,10 +26,10 @@ public:
 	}
 
 	int removeDuplicatesOA2(vector<int>& nums) {
-		// distanceº¯Êı¼ÆËãÁ½µü´úÆ÷µÄ¾àÀë, [)Çø¼ä
+		// distanceå‡½æ•°è®¡ç®—ä¸¤è¿­ä»£å™¨çš„è·ç¦», [)åŒºé—´
 
-		// uniqueº¯ÊıÉ¾³ıµü´úÆ÷·¶Î§¼äµÄÁ¬ĞøÖØ¸´( ¿ÉÏÈÁîÆäÓĞĞò£¬½«ÖØ¸´ÔªËØÁ¬ĞøÒÔÂú×ãÌõ¼ş )ÔªËØ£¬
-		// ²¢·µ»ØÈ¥ÖØºóµÄÓÒ¿ªÇø¼äµü´úÆ÷
+		// uniqueå‡½æ•°åˆ é™¤è¿­ä»£å™¨èŒƒå›´é—´çš„è¿ç»­é‡å¤( å¯å…ˆä»¤å…¶æœ‰åºï¼Œå°†é‡å¤å…ƒç´ è¿ç»­ä»¥æ»¡è¶³æ¡ä»¶ )å…ƒç´ ï¼Œ
+		// å¹¶è¿”å›å»é‡åçš„å³å¼€åŒºé—´è¿­ä»£å™¨
 		return distance(nums.begin(), unique(nums.begin(), nums.end()));
 	}
 
@@ -38,14 +38,14 @@ public:
 		return distance(nums.begin(), removeDuplicates(nums.begin(), nums.end(), nums.begin()));
 	}
 
-	template<typename InIt, typename OutIt>		// ¸Ğ¾õÕâÀïµÄOutItÓĞµãÈßÓà
+	template<typename InIt, typename OutIt>		// æ„Ÿè§‰è¿™é‡Œçš„OutItæœ‰ç‚¹å†—ä½™
 	OutIt removeDuplicates(InIt first, InIt last, OutIt output) {
 		while (first != last) {
 			*output++ = *first;
 
 			/* upper_bound( arg1, arg2, arg3 ) */
-			/* upper_bound ·µ»ØÓÉarg1¡¢arg2Ëù×é³ÉµÄ
-			×ó¿ªÓÒ±Õµü´úÆ÷Çø¼ä( [arg1, arg2) )ÄÚÊ×¸ö´óÓÚarg3µÄÔªËØ¶ÔÓ¦µÄµü´úÆ÷Î»ÖÃ */
+			/* upper_bound è¿”å›ç”±arg1ã€arg2æ‰€ç»„æˆçš„
+			å·¦å¼€å³é—­è¿­ä»£å™¨åŒºé—´( [arg1, arg2) )å†…é¦–ä¸ªå¤§äºarg3çš„å…ƒç´ å¯¹åº”çš„è¿­ä»£å™¨ä½ç½® */
 			first = upper_bound(first, last, *first);
 		}
 		return output;

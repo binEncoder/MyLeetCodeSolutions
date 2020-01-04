@@ -50,7 +50,7 @@ private:
 };
 
 
-/* ��ʹ�õݹ顭�� best beat 98.71%
+/* 神使用递归…… best beat 98.71%
 public:
 	ListNode* temp;
 	bool isPalindrome(ListNode* head) {

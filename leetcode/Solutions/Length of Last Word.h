@@ -4,7 +4,7 @@
 
 class Solution_LengthOfLastWord {
 public:
-	// 100% ����OA���˽ⷨ��ȫ�Կո���Ϊ���ʱ�־�������ַ�����Hello world!�������һ�����ʱ���Ϊ����Ϊ6
+	// 100% 劣于OA，此解法完全以空格作为单词标志，而像字符串“Hello world!”的最后一个单词被认为长度为6
 	int lengthOfLastWord(string s) {
 		int ret = 0;
 		bool beginFlag = false;

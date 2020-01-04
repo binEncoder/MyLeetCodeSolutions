@@ -4,7 +4,7 @@
 
 class Solution_AddBinary {
 public:
-	// 100% Ã÷ÏÔÁÓÓÚOA( ²»·½±ãÔÄ¶Á ) - Ê±¼ä¸´ÔÓ¶ÈO(N)£¬¿Õ¼ä¸´ÔÓ¶ÈO(1)
+	// 100% æ˜Žæ˜¾åŠ£äºŽOA( ä¸æ–¹ä¾¿é˜…è¯» ) - æ—¶é—´å¤æ‚åº¦O(N)ï¼Œç©ºé—´å¤æ‚åº¦O(1)
 	string addBinary(string a, string b) {
 		bool addToStrA = (a.size() >= b.size()) ? true : false;
 		char carry = 0;
@@ -73,7 +73,7 @@ public:
 		}
 	}
 
-	// 100% Ê±¼ä¸´ÔÓ¶ÈO(N)£¬¿Õ¼ä¸´ÔÓ¶ÈO(N)
+	// 100% æ—¶é—´å¤æ‚åº¦O(N)ï¼Œç©ºé—´å¤æ‚åº¦O(N)
 	string addBinaryOA(string a, string b) {
 		string result;
 		const size_t n = a.size() > b.size() ? a.size() : b.size();

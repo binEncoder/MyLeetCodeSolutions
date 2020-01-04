@@ -11,7 +11,7 @@ public:
 		stack<char> chars;
 		bool ret = false;
 		for( auto var : s){
-			// 表示在left字符串中找不到var字符
+			// 琛ㄧず鍦╨eft瀛楃涓蹭腑鎵句笉鍒皏ar瀛楃
 			if (left.find(var) != string::npos) {
 				chars.push(var);
 			}

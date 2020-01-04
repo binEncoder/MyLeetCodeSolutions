@@ -3,7 +3,7 @@
 #include "common.h"
 class Solution_TwoSum {
 public:
-	// ±éÀú2´Î
+	// éå†2æ¬¡
 	vector<int> twoSum(vector<int>& nums, int target) {
 		unordered_map<int, int> map;
 		vector<int> res;
@@ -15,7 +15,7 @@ public:
 		for (idx = 0; idx < nums.size(); idx++) {
 			const int anotherNum = target - nums[idx];
 			if ((map.find(anotherNum) != map.end())
-				&& (idx != map[anotherNum])) {			//Ôö¼ÓÌõ¼ş£¬Ã¿¸öÔªËØÖ»ÔÊĞíÊ¹ÓÃÒ»´Î£¬¼´ÏÂ±ê²»ÄÜÏàÍ¬
+				&& (idx != map[anotherNum])) {			//å¢åŠ æ¡ä»¶ï¼Œæ¯ä¸ªå…ƒç´ åªå…è®¸ä½¿ç”¨ä¸€æ¬¡ï¼Œå³ä¸‹æ ‡ä¸èƒ½ç›¸åŒ
 				res.push_back(idx);
 				res.push_back(map[anotherNum]);
 				break;
@@ -24,7 +24,7 @@ public:
 		return res;
 	}
 
-	// ±éÀú1´Î
+	// éå†1æ¬¡
 	vector<int> twoSumLoopOneTime(vector<int>& nums, int target) {
 		unordered_map<int, int> map;
 		vector<int> res;
@@ -32,13 +32,13 @@ public:
 		for (idx = 0; idx < nums.size(); idx++) {
 			const int anotherNum = target - nums[idx];
 			if ((map.find(anotherNum) != map.end())
-				&& (idx != map[anotherNum])	//Ôö¼ÓÌõ¼ş£¬Ã¿¸öÔªËØÖ»ÔÊĞíÊ¹ÓÃÒ»´Î£¬¼´ÏÂ±ê²»ÄÜÏàÍ¬
+				&& (idx != map[anotherNum])	//å¢åŠ æ¡ä»¶ï¼Œæ¯ä¸ªå…ƒç´ åªå…è®¸ä½¿ç”¨ä¸€æ¬¡ï¼Œå³ä¸‹æ ‡ä¸èƒ½ç›¸åŒ
 			){
 				res.push_back(idx);
 				res.push_back(map[anotherNum]);
 				break;
 			}
-			map[nums[idx]] = idx;			//½«Ìí¼ÓÊı¾İ·ÅÔÚºó·½£¬±ÜÃâ³öÏÖÏàÍ¬valueÊ±¸²¸Çkey£¬´Ó¶øÊä³ö¿Õ
+			map[nums[idx]] = idx;			//å°†æ·»åŠ æ•°æ®æ”¾åœ¨åæ–¹ï¼Œé¿å…å‡ºç°ç›¸åŒvalueæ—¶è¦†ç›–keyï¼Œä»è€Œè¾“å‡ºç©º
 		}
 		return res;
 	}
